@@ -1,0 +1,59 @@
+name: Publish Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.event.repository.visibility == 'public'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Materialize first-run source
+        run: python bootstrap.py
+      - name: Check free operation policy
+        run: python -c "from src.common import settings; from src.cost_guard import check; check(settings())"
+      - name: Test publication safeguards
+        run: python -m unittest discover -s tests -v
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Build site
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python -m src.build --base-url "$BASE_URL"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Record confirmed publication
+        env:
+          DEPLOYMENT_SUCCEEDED: 'true'
+        run: |
+          python -m src.mark_published
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md PROJECT_SPEC.md requirements.txt .gitignore assets/ config/ data/ logs/ posts/ prompts/ src/ tests/
+          if ! git diff --cached --quiet; then
+            git commit -m "Record successful Pages publication [skip ci]"
+            git push
+          fi
