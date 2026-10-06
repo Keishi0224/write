@@ -50,7 +50,8 @@ LOGO = '<svg viewBox="0 0 36 36" aria-hidden="true"><rect x="2" y="2" width="32"
 
 def shell(title, description, content, prefix, config, canonical=None, schema=None):
     full_title = title if title == config["site_title"] else title + ' | ' + config["site_title"]
-    tags = ''
+    # Public ownership verification tag for the user-approved Search Console property.
+    tags = '<meta name="google-site-verification" content="mkg372-sq2Tb7xuXVzspmxaZcBKQrTX486xtARTeyk4">'
     if canonical:
         tags += f'<link rel="canonical" href="{esc(canonical)}"><meta property="og:url" content="{esc(canonical)}">'
     if schema:
