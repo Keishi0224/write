@@ -1,0 +1,33 @@
+{
+  "site_title": "デジタル手帖",
+  "site_description": "Webの基礎を、ひとつずつ。デジタルの小さな疑問をほどく読みもの。",
+  "base_url": "https://keishi0224.github.io/write",
+  "generation_mode": "editorial_templates",
+  "max_posts_per_day": 1,
+  "allowed_hosts": [
+    "developer.mozilla.org",
+    "docs.github.com",
+    "www.w3.org"
+  ],
+  "allowed_categories": [
+    "Webの基礎",
+    "サイトづくり",
+    "情報整理"
+  ],
+  "blocked_terms": [
+    "投資",
+    "診断",
+    "治療",
+    "法律相談",
+    "必ず稼げ",
+    "絶対に安全"
+  ],
+  "cost_policy": {
+    "verified_on": "2026-10-06",
+    "valid_days": 30,
+    "paid_apis_enabled": false,
+    "hosting": "github_pages",
+    "runner": "ubuntu-latest",
+    "billing_source": "https://docs.github.com/en/actions/concepts/billing-and-usage"
+  }
+}

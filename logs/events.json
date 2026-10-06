@@ -1,0 +1,27 @@
+[
+  {
+    "at": "2026-10-06T03:00:52.452818+00:00",
+    "event": "prepared",
+    "detail": "first-website-plan.md"
+  },
+  {
+    "at": "2026-10-06T03:03:40.747018+00:00",
+    "event": "initial_prepared",
+    "detail": "html-css-js-roles.md"
+  },
+  {
+    "at": "2026-10-06T03:03:40.781861+00:00",
+    "event": "initial_prepared",
+    "detail": "headings-for-readers.md"
+  },
+  {
+    "at": "2026-10-06T03:03:40.821620+00:00",
+    "event": "initial_prepared",
+    "detail": "static-site-basics.md"
+  },
+  {
+    "at": "2026-10-06T03:10:35.969121+00:00",
+    "event": "skipped",
+    "detail": "本日の記事作成上限に達しました。"
+  }
+]

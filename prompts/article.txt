@@ -1,0 +1,1 @@
+読者の具体的な疑問に答える日本語の独自記事。title, description, category, tags, intro, sections, takeaway, sourcesを用意。医療・法律・金融は対象外。原稿確認後にのみreviewedをtrueにする。
