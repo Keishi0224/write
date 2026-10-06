@@ -1,0 +1,54 @@
+name: Daily article
+on:
+  schedule:
+    - cron: '17 23 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: autoblog
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.event.repository.visibility == 'public'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      prepared: ${{ steps.changes.outputs.prepared }}
+    env:
+      REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Materialize first-run source
+        run: python bootstrap.py
+      - name: Verify safeguards
+        run: python -m unittest discover -s tests -v
+      - name: Prepare one article
+        run: python -m src.main
+      - name: Validate generated pages
+        run: python -m src.build
+      - id: changes
+        name: Check for prepared articles
+        run: |
+          if [ -n "$(git status --porcelain posts/)" ]; then
+            echo "prepared=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Save history and error records
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts/ data/ logs/
+          if ! git diff --cached --quiet; then
+            git commit -m "Record daily article preparation [skip ci]"
+            git push
+          fi
+  publish:
+    needs: prepare
+    if: needs.prepare.outputs.prepared == 'true'
+    uses: ./.github/workflows/deploy.yml
