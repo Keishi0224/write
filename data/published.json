@@ -66,5 +66,22 @@
     "prepared_at": "2026-10-06",
     "published_at": "2026-10-06T03:18:10.282722+00:00",
     "status": "published"
+  },
+  {
+    "title": "「こちら」から一歩先へ。伝わるリンクの書き方",
+    "slug": "useful-link-text",
+    "topic_id": "useful-link-text",
+    "category": "情報整理",
+    "sources": [
+      {
+        "title": "MDN：ハイパーリンクの作成",
+        "url": "https://developer.mozilla.org/ja/docs/Learn_web_development/Core/Structuring_content/Creating_links",
+        "sha256": "e057ff06925899528c19551d214ce426d3e89f161fe3a75552fbc52352671b3d"
+      }
+    ],
+    "body_hash": "48bb93e3246750e7f81b9d42383f01c5373069c89107090f7e63ce4198df0a67",
+    "prepared_at": "2026-10-07",
+    "published_at": null,
+    "status": "prepared"
   }
 ]
