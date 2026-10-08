@@ -83,5 +83,22 @@
     "prepared_at": "2026-10-07",
     "published_at": "2026-10-07T02:27:47.502648+00:00",
     "status": "published"
+  },
+  {
+    "title": "画像の説明文、どう書く？代替テキストの考え方",
+    "slug": "image-alt-basics",
+    "topic_id": "image-alt-basics",
+    "category": "Webの基礎",
+    "sources": [
+      {
+        "title": "MDN：画像要素",
+        "url": "https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements/img",
+        "sha256": "a7bb6958665e8f12aab1918e1b85bef070961e8aacd883e2c69fd1c58c538947"
+      }
+    ],
+    "body_hash": "8ccdc3c4931688403fc4a49138b41b2873635a713352c93bd7962db6a4ae5a6b",
+    "prepared_at": "2026-10-08",
+    "published_at": null,
+    "status": "prepared"
   }
 ]
