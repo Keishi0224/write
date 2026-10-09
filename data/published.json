@@ -100,5 +100,22 @@
     "prepared_at": "2026-10-08",
     "published_at": "2026-10-08T02:44:10.163230+00:00",
     "status": "published"
+  },
+  {
+    "title": "スマホで読みやすいページへ。最初に確認したい3つのポイント",
+    "slug": "responsive-first-check",
+    "topic_id": "responsive-first-check",
+    "category": "サイトづくり",
+    "sources": [
+      {
+        "title": "MDN：レスポンシブデザイン",
+        "url": "https://developer.mozilla.org/ja/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+        "sha256": "7ebd013cee115bf644cbf4aed29ba37a5fda6b9c726c8efdd482cd58b0755ae3"
+      }
+    ],
+    "body_hash": "992cdb1be315c3ffa61166fd0a59ade4b8de7aafcb467e5e0d9a78844c15b325",
+    "prepared_at": "2026-10-09",
+    "published_at": null,
+    "status": "prepared"
   }
 ]

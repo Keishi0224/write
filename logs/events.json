@@ -38,5 +38,10 @@
     "at": "2026-10-08T02:43:51.057759+00:00",
     "event": "prepared",
     "detail": "image-alt-basics.md"
+  },
+  {
+    "at": "2026-10-09T02:58:19.971561+00:00",
+    "event": "prepared",
+    "detail": "responsive-first-check.md"
   }
 ]
