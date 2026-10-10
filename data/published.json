@@ -117,5 +117,22 @@
     "prepared_at": "2026-10-09",
     "published_at": "2026-10-09T02:58:45.350403+00:00",
     "status": "published"
+  },
+  {
+    "title": "Markdownで記事を書く。見た目より内容に集中するための入門",
+    "slug": "markdown-writing-basics",
+    "topic_id": "markdown-writing-basics",
+    "category": "情報整理",
+    "sources": [
+      {
+        "title": "GitHub Docs：Basic writing and formatting syntax",
+        "url": "https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax",
+        "sha256": "e1cf9c7fa28003b157c7ac097061b33342953254809434973361bed0e9b437db"
+      }
+    ],
+    "body_hash": "02427c2f8b1d8aa16afe0f76aad7b27d752a8d548d5224dae9d2a14527690658",
+    "prepared_at": "2026-10-10",
+    "published_at": null,
+    "status": "prepared"
   }
 ]
