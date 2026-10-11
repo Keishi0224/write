@@ -48,5 +48,10 @@
     "at": "2026-10-10T02:23:59.974467+00:00",
     "event": "prepared",
     "detail": "markdown-writing-basics.md"
+  },
+  {
+    "at": "2026-10-11T01:58:11.914735+00:00",
+    "event": "queue_empty",
+    "detail": "確認済み記事候補がありません。追加の編集が必要です。"
   }
 ]
